@@ -104,7 +104,7 @@ export class GameComponent implements OnInit {
         gameInProgress: true,
         currentGameTime: this.currentTime
       })
-    }, 10);
+    }, 100);
   }
 
   getStep(){
