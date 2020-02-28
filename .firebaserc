@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "testapp-68fd0"
+  },
+  "targets": {
+    "testapp-68fd0": {
+      "hosting": {
+        "fcg": [
+          "testapp-68fd0"
+        ],
+        "calcgame": [
+          "calcgame"
+        ]
+      }
+    }
+  }
+}

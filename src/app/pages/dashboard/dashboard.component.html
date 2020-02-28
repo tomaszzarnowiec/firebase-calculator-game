@@ -1,0 +1,18 @@
+<p>Zalogowani:</p>
+<ul class="users-list logged">
+    <li *ngFor="let user of loggedInUsers | async">
+        <div class="user-content" [ngStyle]="{'background-image': 'url(' + user.photoURL + ')'}"></div>
+    </li>
+</ul>
+
+<p>Ranking:</p>
+<ul class="users-list">
+    <li *ngFor="let user of loggedInUsers | async">
+        <div class="user-content" [ngStyle]="{'background-image': 'url(' + user.photoURL + ')'}"></div>
+        <div class="user-info">
+            <span>{{user.email}}</span>
+            <span *ngIf="user.gameTime && !user.gameInProgress">czas: <strong>{{user.gameTime}}</strong></span>
+            <span *ngIf="user.gameInProgress">trwa: <strong>{{user.currentGameTime}}</strong></span>
+        </div>
+    </li>
+</ul>

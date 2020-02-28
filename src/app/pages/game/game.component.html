@@ -1,0 +1,19 @@
+<div class="game-container">
+    <div class="topbar">
+        <button (click)="startGame()" *ngIf="!gameInProgress">Start</button>
+        <a class="button red" [routerLink]="[ '/dashboard' ]">Ranking</a>
+    </div>
+    
+    <p>Grasz jako {{user.uid}} -> {{user.email}}</p>
+    <p *ngIf="startTimeLabel">Start: <span>{{startTimeLabel}}</span> <span *ngIf="endTimeLabel">- {{endTimeLabel}} == {{duration}}</span></p>
+    <p style="font-weight: 700;">{{currentTime}}</p>
+    <div class="game-content" *ngIf="gameInProgress">
+        <span>{{questions[currentStep].question}} = <input type="number" #answer (input)="answerInputCheck($event, questions[currentStep])"></span>
+
+        <div style="margin-top: 10px;">
+            <button (click)="answer.value = ''; answer.focus(); nextStep()" *ngIf="questions[currentStep].correctAnswer && questions[currentStep].questionId !== 10">Dalej</button>
+        </div>
+    </div>
+
+    <button (click)="endGame()" class="red" *ngIf="gameInProgress && questions[currentStep].questionId == 10 && questions[currentStep].correctAnswer">Koniec</button>
+</div>

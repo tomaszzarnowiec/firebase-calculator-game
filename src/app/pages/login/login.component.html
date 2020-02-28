@@ -1,0 +1,24 @@
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-4 ui-md-offset-4">
+        <form [formGroup]="loginForm" novalidate (ngSubmit)="loginViaEmail()">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+                <input type="text" pInputText formControlName="email" placeholder="Email">
+            </div>
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="pi pi-lock" style="line-height: 1.25;"></i></span>
+                <input type="password" pPassword formControlName="password" placeholder="Password">
+            </div>
+
+            <button pButton type="submit" label="Login"></button>
+        </form>
+    </div>
+    <div class="ui-g-12 ui-md-4 ui-md-offset-4">
+        <p>Możesz także <span>zalogować się przez Google</span>.</p>
+        <div class="providers">
+            <button class="btn btn-danger" (click)="loginViaGoogle()">
+                <i class="fab fa-google"></i> Google
+            </button>
+        </div>
+    </div>
+</div>
